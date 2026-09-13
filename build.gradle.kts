@@ -1,4 +1,4 @@
-group = "com.aliucord"
+group = "com.bugcord"
 version = "1.0.1"
 
 plugins {
@@ -28,19 +28,6 @@ publishing {
     }
 
     repositories {
-        val username = System.getenv("MAVEN_RELEASE_USERNAME")
-        val password = System.getenv("MAVEN_RELEASE_PASSWORD")
-
-        if (username != null && password != null) {
-            maven {
-                credentials {
-                    this.username = username
-                    this.password = password
-                }
-                setUrl("https://maven.aliucord.com/releases")
-            }
-        } else {
-            mavenLocal()
-        }
+        mavenLocal()
     }
 }
